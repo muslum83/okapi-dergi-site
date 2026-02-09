@@ -245,7 +245,12 @@
         };
 
         fetch("/data/issues.json")
-          .then((res) => res.json())
+          .then((res) => {
+            if (!res.ok) {
+              throw new Error(`HTTP ${res.status}`);
+            }
+            return res.json();
+          })
           .then((data) => {
             const items = (data.items || []).slice().sort((a, b) => b.number - a.number);
             if (!items.length) return;
@@ -269,7 +274,8 @@
             items.slice(1).forEach((item) => orbit.appendChild(buildItem(item)));
             initOrbit();
           })
-          .catch(() => {
+          .catch((err) => {
+            console.error("Arşiv yüklenemedi:", err);
             orbit.innerHTML = "<p>Arşiv yüklenemedi.</p>";
           });
       })();
