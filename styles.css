@@ -349,8 +349,8 @@ img {
 
 .issues-orbit .issue {
   position: absolute;
-  width: 200px;
-  --scale: 1.02;
+  width: 180px;
+  --scale: 1;
   transition: box-shadow 0.16s ease, border-color 0.16s ease, filter 0.16s ease;
   cursor: pointer;
 }
@@ -367,7 +367,7 @@ img {
 }
 
 .issue:hover {
-  --scale: 1.18;
+  --scale: 1.1;
   box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
   border-color: rgba(255, 255, 255, 0.12);
 }

@@ -193,8 +193,8 @@
             const r0 = baseRadius();
             items.forEach((item, i) => {
               const angle = (i / items.length) * Math.PI * 2 + angleOffset;
-            const x = Math.cos(angle) * r0 * 1.65;
-            const y = Math.sin(angle) * r0 * 0.62;
+            const x = Math.cos(angle) * r0 * 1.8;
+            const y = Math.sin(angle) * r0 * 0.7;
             const depth = Math.max(0.55, (y + r0 * 0.8) / (r0 * 1.6));
             const baseScale = parseFloat(getComputedStyle(item).getPropertyValue("--scale") || 1);
             const hoverBoost = item.matches(":hover") ? 1.18 : 1;
@@ -204,7 +204,7 @@
             item.style.transform = `translate(-50%, -50%) translate3d(${x}px, ${y}px, 0) scale(${scale})`;
             const z = Math.round((y + r0 * 0.8) * 100);
             item.style.zIndex = z;
-            item.style.opacity = scale < 0.9 ? "0.9" : "1";
+            item.style.opacity = "1";
             });
           };
 
