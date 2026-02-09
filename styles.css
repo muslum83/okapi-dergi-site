@@ -305,6 +305,8 @@ img {
 }
 
 .issues .container {
+  width: 100%;
+  max-width: none;
   display: grid;
   justify-items: center;
 }
@@ -317,6 +319,7 @@ img {
   margin-bottom: 32px;
   text-align: center;
   width: 100%;
+  max-width: 1280px;
 }
 
 .section-title p {
