@@ -56,10 +56,12 @@
             </div>
           </div>
           <div id="son-sayi" class="hero-cover centered">
-            <div class="hero-cover-inner">
-              <img src="assets/sayi_9.png" alt="Okapi 9. Sayı kapağı" loading="eager" fetchpriority="high" decoding="async" />
-            </div>
-            <div class="hero-tag">Yeni Sayı · 9</div>
+            <a class="hero-link" href="https://www.shopier.com/okapidergi" target="_blank" rel="noreferrer">
+              <div class="hero-cover-inner">
+                <img data-hero-image src="assets/sayi_9.png" alt="Okapi 9. Sayı kapağı" loading="eager" fetchpriority="high" decoding="async" />
+              </div>
+            </a>
+            <div class="hero-tag" data-hero-tag>Yeni Sayı · 9</div>
           </div>
           <div class="hero-bottom">
             <div class="hero-actions">
@@ -198,7 +200,9 @@
               const hoverBoost = item.matches(":hover") ? 1.18 : 1;
               const scale = depth * baseScale * hoverBoost;
               item.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
-              item.style.zIndex = Math.round((y + r0) * 10) + (item.matches(":hover") ? 1000 : 0);
+              const z = Math.max(1, Math.round((y + r0) * 10));
+              item.style.zIndex = z + (item.matches(":hover") ? 1000 : 0);
+              item.style.opacity = "1";
             });
           };
 
@@ -240,15 +244,33 @@
           positionItems();
         };
 
-        fetch("data/issues.json")
+        fetch("/data/issues.json")
           .then((res) => res.json())
           .then((data) => {
             const items = (data.items || []).slice().sort((a, b) => b.number - a.number);
-            items.forEach((item) => orbit.appendChild(buildItem(item)));
+            if (!items.length) return;
+
+            const latest = items[0];
+            const heroImg = document.querySelector("[data-hero-image]");
+            const heroTag = document.querySelector("[data-hero-tag]");
+            const heroLink = document.querySelector(".hero-link");
+
+            if (heroImg) {
+              heroImg.src = latest.image;
+              heroImg.alt = `Okapi ${latest.number}. Sayı kapağı`;
+            }
+            if (heroTag) {
+              heroTag.textContent = `Yeni Sayı · ${latest.number}`;
+            }
+            if (heroLink) {
+              heroLink.href = latest.shopier_url || "https://www.shopier.com/okapidergi";
+            }
+
+            items.slice(1).forEach((item) => orbit.appendChild(buildItem(item)));
             initOrbit();
           })
           .catch(() => {
-            orbit.innerHTML = \"<p>Arşiv yüklenemedi.</p>\";
+            orbit.innerHTML = "<p>Arşiv yüklenemedi.</p>";
           });
       })();
     </script>
