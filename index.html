@@ -202,10 +202,9 @@
             item.style.left = "50%";
             item.style.top = "50%";
             item.style.transform = `translate(-50%, -50%) translate3d(${x}px, ${y}px, 0) scale(${scale})`;
-            const z = Math.max(1, Math.round((y + r0) * 10));
-            const clamped = Math.min(10, z);
-            item.style.zIndex = clamped;
-            item.style.opacity = "1";
+            const z = Math.round(depth * 100);
+            item.style.zIndex = z;
+            item.style.opacity = scale < 0.9 ? "0.9" : "1";
             });
           };
 
