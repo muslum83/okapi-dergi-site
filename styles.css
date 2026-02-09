@@ -328,6 +328,11 @@ img {
   align-items: center;
 }
 
+.section-title h2 {
+  text-align: center;
+  width: 100%;
+}
+
 .issues-orbit {
   position: relative;
   width: min(1600px, 99vw);
