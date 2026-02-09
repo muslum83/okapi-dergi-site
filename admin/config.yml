@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "issues"
+    label: "Sayılar"
+    files:
+      - name: "issues"
+        label: "Sayılar"
+        file: "data/issues.json"
+        format: "json"
+        fields:
+          - label: "Sayılar"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Sayı No", name: "number", widget: "number" }
+              - { label: "Kapak", name: "image", widget: "image" }
+              - { label: "Shopier Link", name: "shopier_url", widget: "string" }

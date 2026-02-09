@@ -1,0 +1,13 @@
+{
+  "items": [
+    { "number": 9, "image": "assets/sayi_9.png", "shopier_url": "https://www.shopier.com/okapidergi" },
+    { "number": 8, "image": "assets/sayi_8.png", "shopier_url": "https://www.shopier.com/okapidergi/40761308" },
+    { "number": 7, "image": "assets/sayi_7.png", "shopier_url": "https://www.shopier.com/38996485" },
+    { "number": 6, "image": "assets/sayi_6.png", "shopier_url": "https://www.shopier.com/38731207" },
+    { "number": 5, "image": "assets/sayi_5.png", "shopier_url": "https://www.shopier.com/okapidergi" },
+    { "number": 4, "image": "assets/sayi_4.png", "shopier_url": "https://www.shopier.com/okapidergi" },
+    { "number": 3, "image": "assets/sayi_3.png", "shopier_url": "https://www.shopier.com/38729164" },
+    { "number": 2, "image": "assets/sayi_2.png", "shopier_url": "https://www.shopier.com/okapidergi" },
+    { "number": 1, "image": "assets/sayi_1.png", "shopier_url": "https://www.shopier.com/38717208" }
+  ]
+}
