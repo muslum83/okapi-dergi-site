@@ -66,10 +66,17 @@ img {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  backdrop-filter: blur(12px);
-  background: rgba(42, 38, 34, 0.8);
+  z-index: 9999;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #2a2622;
+  z-index: -1;
 }
 
 .header-inner {
@@ -78,6 +85,8 @@ img {
   justify-content: space-between;
   padding: 18px 0;
   gap: 24px;
+  position: relative;
+  z-index: 1;
 }
 
 .brand-lockup {
@@ -308,6 +317,7 @@ img {
   margin: 0 auto;
   display: grid;
   place-items: center;
+  z-index: 0;
 }
 
 .issues-orbit .issue {
