@@ -193,7 +193,7 @@
             const r0 = baseRadius();
             items.forEach((item, i) => {
               const angle = (i / items.length) * Math.PI * 2 + angleOffset;
-            const x = Math.cos(angle) * r0 * 1.65 - 30;
+            const x = Math.cos(angle) * r0 * 1.65;
             const y = Math.sin(angle) * r0 * 0.62;
             const depth = Math.max(0.55, (y + r0 * 0.8) / (r0 * 1.6));
             const baseScale = parseFloat(getComputedStyle(item).getPropertyValue("--scale") || 1);

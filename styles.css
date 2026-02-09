@@ -316,6 +316,7 @@ img {
   gap: 24px;
   margin-bottom: 32px;
   text-align: center;
+  width: 100%;
 }
 
 .section-title p {
