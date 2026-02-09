@@ -16,13 +16,26 @@
   padding: 0;
 }
 
+html,
+body {
+  background: #1f1c18;
+}
+
 body {
   font-family: "Spectral", "Times New Roman", serif;
-  background: radial-gradient(circle at 50% 45%, rgba(70, 52, 40, 0.45) 0%, rgba(34, 28, 24, 0.7) 60%),
-    #1f1c18;
+  position: relative;
   color: var(--ink);
   line-height: 1.65;
   min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 50% 45%, rgba(70, 52, 40, 0.45) 0%, transparent 60%);
+  z-index: -2;
 }
 
 h1,
