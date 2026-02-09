@@ -562,3 +562,9 @@ img {
     gap: 8px;
   }
 }
+.site-header,
+.site-header::before {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
